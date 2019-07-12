@@ -17,12 +17,6 @@ function initialize {
   git config --global user.name "Travis CI"
   git config --global push.default simple
   git config --global diff.zip.textconv "unzip -c -a"
-
-  # Decrypt and add deploy key.
-  #eval "$(ssh-agent -s)"
-  #openssl aes-256-cbc -K "$encrypted_973441be79af_key" -iv "$encrypted_973441be79af_iv" -in ./scripts/id_ed25519_tldr_asset_upload.enc -out id_ed25519 -d
-  #chmod 600 id_ed25519
-  #ssh-add id_ed25519
 }
 
 function upload_assets {
