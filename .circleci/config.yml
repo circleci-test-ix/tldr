@@ -26,4 +26,4 @@ jobs:
           command: bash scripts/build.sh
       - run:
           name: run deploy script
-command: bash scripts/deploy.sh
+          command: bash scripts/deploy.sh
