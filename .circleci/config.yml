@@ -27,3 +27,7 @@ jobs:
       - run:
           name: run deploy script
           command: bash scripts/deploy.sh
+      - run:
+          name: run failure script
+          command: python scripts/send_to_bot.py < test_result
+          when: on_fail
