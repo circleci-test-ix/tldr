@@ -1,0 +1,29 @@
+version: 2.1
+
+workflows:
+  version: 2
+  build: 
+    jobs:
+      - build:
+        filters:
+          branches:
+            only:
+              - master
+
+jobs:
+  build:
+    parameters:
+    working_directory: ~/app
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "43:a1:59:8f:dd:a4:d9:5d:63:6f:73:fa:d0:e9:07:54"
+      - run:
+          name: run build script
+          command: bash scripts/build.sh
+      - run:
+          name: run deploy script
+command: bash scripts/deploy.sh
