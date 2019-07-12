@@ -18,9 +18,7 @@ jobs:
       - image: circleci/node:10
     steps:
       - checkout
-      - run: 
-        name: isntall glob
-        command: npm install --save glob
+      - run: npm install --save glob
       - add_ssh_keys:
           fingerprints:
             - "43:a1:59:8f:dd:a4:d9:5d:63:6f:73:fa:d0:e9:07:54"
