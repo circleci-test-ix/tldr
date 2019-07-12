@@ -15,7 +15,7 @@ jobs:
     parameters:
     working_directory: ~/app
     docker:
-      - image: circleci/node:12
+      - image: circleci/node:10
     steps:
       - checkout
       - add_ssh_keys:
@@ -27,7 +27,3 @@ jobs:
       - run:
           name: run deploy script
           command: bash scripts/deploy.sh
-      - run:
-          name: run failure script
-          command: python scripts/send_to_bot.py < test_result
-          when: on_fail
